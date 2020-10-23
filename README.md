@@ -99,3 +99,33 @@ Welcome to rshell. Use Control-D (or the exit command) to exit rshell.
 pyboard @ /dev/ttyUSB0 connected Epoch: 2000 Dirs: /boot.py /pyboard/boot.py
 /home/user> exit
 ```
+
+#### Blink example
+```
+/home/user/esp32> boards
+pyboard @ /dev/ttyUSB0 connected Epoch: 2000 Dirs: /boot.py /pyboard/boot.py
+/home/user/esp32> cp examples/blink.py /pyboard/.
+/home/user/esp32> repl
+Entering REPL. Use Control-X to exit.
+>
+MicroPython v1.13 on 2020-09-02; ESP32 module with ESP32
+Type "help()" for more information.
+>>> 
+>>> import blink
+Start blinking
+LED ON
+LED OFF
+LED ON
+LED OFF
+LED ON
+LED OFF
+Stop blinking
+>>>
+```
+
+#### At startup
+To run a script at start-up copy the script as `main.py`. 
+Plugging in the device afresh will run `main.py`
+```
+/home/user/esp32> cp examples/blink.py /pyboard/main.py
+```
